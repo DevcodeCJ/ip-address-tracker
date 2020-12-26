@@ -1,38 +1,184 @@
-.App {
+/* ===== Global Styles ===== */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  color: hsl(0, 0%, 17%);
+  line-height: 1.5;
+  font-size: 1rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.7rem;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 0.4rem;
+  display: flex;
+  justify-content: center;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+header {
+  background: url("./images/pattern-bg.png") no-repeat center;
+  background-size: cover;
+  box-shadow: 0px 10px 25px hsla(240, 2%, 27%, 0.65);
+  height: 325px;
+  padding: 1.75rem 3rem;
+  position: relative;
+  z-index: 2;
+}
+input {
+  border-style: none;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  margin-left: 1.5rem;
+  width: 80%;
+}
+input:focus {
+  outline: none;
+}
+p {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ===== Sections ===== */
+#mapid {
+  height: 585px;
+  z-index: 1;
+}
+#preloader {
+  height: 585px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(223, 47%, 93%);
+}
+.arrow-btn {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.default-info {
+  color: hsl(239, 39%, 53%);
+  font-size: 14px;
+  padding: 1rem;
+}
+.geo-ctn {
+  background-color: white;
+  padding: 1rem 10% 1rem;
+  border-radius: 18px;
+  box-shadow: 0px 10px 45px hsla(240, 2%, 27%, 0.45);
+  position: relative;
+  z-index: 3;
+}
+.geo-info {
+  padding: 1rem;
+}
+.input:hover,
+.submit-btn:hover {
+  cursor: pointer;
+}
+.ip-form {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  border-radius: 18px;
+  overflow: hidden;
+  width: 100%;
+}
+.submit-btn {
+  background-color: black;
+  border-style: none;
+  color: white;
+  height: 3.5rem;
+  width: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit-btn:focus {
+  outline: none;
+}
+
+/* ===== Media Queries ===== */
+@media screen and (min-width: 1024px) {
+  header {
+    height: 225px;
+    padding: 1.75rem 15%;
   }
-  to {
-    transform: rotate(360deg);
+  .geo-ctn {
+    display: flex;
+    padding: 1rem 2.5% 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .geo-info {
+    text-align: start;
+  }
+  .line {
+    height: 60px;
+    width: 1px;
+    background-color: hsl(0, 0%, 84%);
+  }
+  .ip-form {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 1.75rem;
+  }
+}
+@media screen and (min-height: 810px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header {
+    height: 30vh;
+  }
+  #mapid {
+    height: 70vh;
+  }
+  #preloader {
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 1365px) and (min-height: 1023px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header {
+    height: 21vh;
+  }
+  #mapid {
+    height: 79vh;
+  }
+  #preloader {
+    height: 79vh;
   }
 }
